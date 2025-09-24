@@ -1,0 +1,48 @@
+name: Build Windows (MonoGame)
+
+on:
+  push:
+    tags:
+      - 'v*'   # only run when you push a tag starting with v (e.g. v0.1.0)
+
+jobs:
+  build-win:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore VibeLaw.Game/VibeLaw.Game.csproj
+
+      - name: Build (Release)
+        run: dotnet build VibeLaw.Game/VibeLaw.Game.csproj -c Release --nologo
+
+      - name: Publish (win-x64, self-contained, single file)
+        run: |
+          dotnet publish VibeLaw.Game/VibeLaw.Game.csproj `
+            -c Release `
+            -r win-x64 `
+            -p:PublishSingleFile=true `
+            -p:SelfContained=true `
+            -p:IncludeNativeLibrariesForSelfExtract=true `
+            --output publish/win-x64
+
+      - name: Create ZIP artifact
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifacts | Out-Null
+          Compress-Archive -Path publish/win-x64/* -DestinationPath artifacts/VibeLaw-win64.zip
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: VibeLaw-win64
+          path: artifacts/VibeLaw-win64.zip
+          if-no-files-found: error
