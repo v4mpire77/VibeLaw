@@ -10,3 +10,22 @@
 /processorParam:TextureFormat=Compressed
 /build:default.spritefont
 #end default.spritefont
+#begin Content/Characters/Omar.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:GenerateMipmaps=False
+/build:Content/Characters/Omar.png
+#end Content/Characters/Omar.png
+
+#begin Content/Characters/Maham.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:GenerateMipmaps=False
+/build:Content/Characters/Maham.png
+#end Content/Characters/Maham.png

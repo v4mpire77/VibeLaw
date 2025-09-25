@@ -38,6 +38,6 @@
   </ItemGroup>
 
   <Target Name="BuildContent" BeforeTargets="Build">
-    <Exec Command="mgcb -@:&quot;$(MSBuildProjectDirectory)/Content.mgcb&quot; /platform:DesktopGL" />
+    <Exec Command="dotnet tool run mgcb -@:&quot;$(MSBuildProjectDirectory)/Content.mgcb&quot; /platform:DesktopGL" />
   </Target>
 </Project>
