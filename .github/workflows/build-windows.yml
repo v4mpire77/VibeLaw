@@ -2,8 +2,10 @@ name: Build Windows (MonoGame)
 
 on:
   push:
+    branches:
+      - main
     tags:
-      - 'v*'   # only run when you push a tag starting with v (e.g. v0.1.0)
+      - 'v*'   # also run when you push a tag starting with v (e.g. v0.1.0)
 
 jobs:
   build-win:
