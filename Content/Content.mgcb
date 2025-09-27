@@ -25,3 +25,13 @@
 /processorParam:TextureFormat=Color
 /build:sprites/player.png
 
+#begin Characters/Omar/Omar_Spritesheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Characters/Omar/Omar_Spritesheet.png
+
