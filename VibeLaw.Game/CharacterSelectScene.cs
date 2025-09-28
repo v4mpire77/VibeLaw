@@ -68,7 +68,7 @@ public class CharacterSelectScene : Scene
             _confirmFlashTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (_confirmFlashTimer <= 0f && !string.IsNullOrEmpty(_pendingSelection))
             {
-                Game.SceneManager.ChangeScene(new PrototypePlayScene(Game, _pendingSelection));
+                Game.SceneManager.ChangeScene(CreateSceneForSelection(_pendingSelection));
             }
         }
         else
@@ -94,6 +94,13 @@ public class CharacterSelectScene : Scene
 
         _previousState = state;
     }
+
+    private Scene CreateSceneForSelection(string selection)
+        => selection switch
+        {
+            "Omar" => new OmarTrainingScene(Game),
+            _ => new PrototypePlayScene(Game, selection),
+        };
 
     private bool IsNewPress(KeyboardState state, Keys key)
         => state.IsKeyDown(key) && !_previousState.IsKeyDown(key);

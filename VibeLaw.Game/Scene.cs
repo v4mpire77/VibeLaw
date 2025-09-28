@@ -12,4 +12,6 @@ public abstract class Scene
     public virtual void Load() { }
     public virtual void Update(Microsoft.Xna.Framework.GameTime gameTime) { }
     public virtual void Draw(Microsoft.Xna.Framework.GameTime gameTime) { }
+    public virtual void Unload() { }
 }
+

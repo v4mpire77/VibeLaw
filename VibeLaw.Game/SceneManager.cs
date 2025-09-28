@@ -14,6 +14,7 @@ public class SceneManager
 
     public void ChangeScene(Scene newScene)
     {
+        _currentScene?.Unload();
         _currentScene = newScene;
         _currentScene.Load();
     }
@@ -24,3 +25,6 @@ public class SceneManager
     public void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         => _currentScene?.Draw(gameTime);
 }
+
+
+

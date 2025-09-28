@@ -1,5 +1,5 @@
 #----------------------------- Global Properties ----------------------------#
-/outputDir:Content/bin/DesktopGL
+/outputDir:Content
 /intermediateDir:Content/obj/DesktopGL
 /platform:DesktopGL
 /compress:False
@@ -10,7 +10,7 @@
 /processorParam:TextureFormat=Compressed
 /build:default.spritefont
 #end default.spritefont
-#begin Content/Characters/Omar.png
+#begin Characters/Omar.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -18,9 +18,9 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:GenerateMipmaps=False
 /build:Content/Characters/Omar.png
-#end Content/Characters/Omar.png
+#end Characters/Omar.png
 
-#begin Content/Characters/Maham.png
+#begin Characters/Maham.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -28,4 +28,17 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:GenerateMipmaps=False
 /build:Content/Characters/Maham.png
-#end Content/Characters/Maham.png
+#end Characters/Maham.png
+#begin Characters/Omar/Omar_Spritesheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:GenerateMipmaps=False
+/build:Content/Characters/Omar/Omar_Spritesheet.png
+#end Characters/Omar/Omar_Spritesheet.png
+
+
+
+
